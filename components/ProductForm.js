@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Spinner from "@/components/Spinner";
 import { ReactSortable } from "react-sortablejs";
+import Image from "next/image";
 
 export default function ProductForm({
   _id,
@@ -131,7 +132,7 @@ export default function ProductForm({
           <ReactSortable list={images} setList={handleImageSort} className="flex flex-wrap gap-4">
             {images.map((link, index) => (
               <div key={index} className="relative group">
-                <img src={link} alt="" className="w-24 h-24 object-cover rounded-md transition-all duration-300 transform group-hover:scale-105" />
+                <Image src={link} alt="" className="w-24 h-24 object-cover rounded-md transition-all duration-300 transform group-hover:scale-105" />
                 <button
                   type="button"
                   className="absolute top-0 right-0 p-1 bg-red-500 rounded-full text-white transition-all duration-300 transform group-hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400"
